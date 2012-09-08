@@ -1,7 +1,6 @@
 class UrlsController < ApplicationController
 
   def create
-
     url = Url.create({
       :user_uuid => params[:user_uuid],
       :client_created_at => params[:client_created_at],

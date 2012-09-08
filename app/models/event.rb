@@ -1,7 +1,10 @@
-class Tab < Base
+class Event < Base
+
+  SOURCES = ['click', 'scroll', 'tab_selected', 'tab_unselected']
 
   validates_presence_of :user_uuid
   validates_presence_of :tab_id
+  validates :source, :inclusion => {:in => SOURCES}
 
   def tab_id
     self[:tab_id].unpack('H*')[0] if self[:tab_id]
