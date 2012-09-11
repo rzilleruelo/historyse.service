@@ -4,8 +4,23 @@ describe "Event", ActiveSupport::TestCase do
 
   context 'creation' do
 
-    it 'should be successfull' do
+    it 'click event should be successfull' do
       event = Event.create(FactoryGirl.attributes_for(:event_click))
+      event.valid?.should == true
+    end
+
+    it 'scroll event should be successfull' do
+      event = Event.create(FactoryGirl.attributes_for(:event_scroll))
+      event.valid?.should == true
+    end
+
+    it 'focus event should be successfull' do
+      event = Event.create(FactoryGirl.attributes_for(:event_focus))
+      event.valid?.should == true
+    end
+
+    it 'blur event should be successfull' do
+      event = Event.create(FactoryGirl.attributes_for(:event_focus))
       event.valid?.should == true
     end
 
@@ -27,7 +42,7 @@ describe "Event", ActiveSupport::TestCase do
         :source => ["is not included in the list"]
       }
     end
-    
+
     it 'should fail, due passing wrong source' do
       event = Event.create(FactoryGirl.attributes_for(:event_click, :source => 'unexpected_source'))
       event.valid?.should == false

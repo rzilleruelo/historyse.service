@@ -5,7 +5,7 @@ class AddEvent < ActiveRecord::Migration
       user_uuid BINARY(16) NOT NULL,
       tab_id BINARY(16) NOT NULL,
       created_at TIMESTAMP NOT NULL,
-      source ENUM('click', 'scroll', 'tab_selected', 'tab_unselected') NOT NULL
+      source ENUM('click', 'scroll', 'focus', 'blur') NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8"
   end
 

@@ -1,6 +1,6 @@
 class Event < Base
 
-  SOURCES = ['click', 'scroll', 'tab_selected', 'tab_unselected']
+  SOURCES = ['click', 'scroll', 'focus', 'blur']
 
   validates_presence_of :user_uuid
   validates_presence_of :tab_id

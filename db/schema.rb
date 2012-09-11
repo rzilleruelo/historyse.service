@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20120811233201) do
     t.binary    "user_uuid",  :limit => 16, :null => false
     t.binary    "tab_id",     :limit => 16, :null => false
     t.timestamp "created_at",               :null => false
-    t.string    "source",     :limit => 14, :null => false
+    t.string    "source",     :limit => 6,  :null => false
   end
 
   create_table "urls", :force => true do |t|
